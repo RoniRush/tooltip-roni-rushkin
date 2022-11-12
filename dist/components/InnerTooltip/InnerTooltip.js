@@ -6,7 +6,6 @@ import { checkEllipsisOverflow } from "../helpers/showTooltipChecks";
 export const InnerTooltip = (props) => {
     const newProps = Object.assign(Object.assign({}, props), getTooltipStyle(props));
     const translateY = getTranslateY(props.location);
-    console.log('props.showTooltip', props.showTooltip);
     return React.createElement("span", null,
         props.children,
         props.showTooltip === ToolTip_Display.SHOW && checkEllipsisOverflow(props) &&

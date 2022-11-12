@@ -37,7 +37,6 @@ export const Tooltip = (props) => {
         }
     }, [setShowTooltip, activated, updatedProps.hideOnClick]);
     let triggeredToolTip;
-    console.log('updatedProps', updatedProps);
     switch (updatedProps.trigger) {
         case ToolTip_Trigger.FOCUS:
             triggeredToolTip = React.createElement(StyledTooltipWrapper, { "data-testid": "styledTooltip", className: 'onFocus tooltip-wrapper', onMouseDown: (event) => toggleTooltip(event, Event_Options.FOCUS, Event_Options.MOUSE_DOWN), onFocus: (event) => toggleTooltip(event, Event_Options.FOCUS, Event_Options.MOUSE_DOWN) },

@@ -8,4 +8,4 @@ export declare const getTooltipStyle: (updatedProps: TooltipProps) => {
         maxWidth?: string;
     };
 };
-export declare const getTranslateY: (location: ToolTip_Location) => "100%" | "-30%" | "-50%";
+export declare const getTranslateY: (location: ToolTip_Location) => "100%" | "-70%" | "-50%";
