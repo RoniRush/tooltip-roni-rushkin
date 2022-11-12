@@ -1,35 +1,29 @@
-import styled, {css, keyframes} from "styled-components";
-import {Transition_Options} from "../constants";
-import {InnerTooltipType} from "../types";
-
-const direction_border = '10px'
-
-const fade = keyframes`
+import styled, { css, keyframes } from "styled-components";
+import { Transition_Options } from "../constants";
+const direction_border = '10px';
+const fade = keyframes `
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
-  }`
-
-const zoom = (translateY: string) => keyframes`
+  }`;
+const zoom = (translateY) => keyframes `
   0% {
     transform: scale(0, 0) translateY(${translateY});
   }
   100% {
     transform: scale(1, 1) translateY(${translateY});
   }
-`
-
-const gradient = (backgroundColor: string | undefined) => keyframes`
+`;
+const gradient = (backgroundColor) => keyframes `
   0% {
     background-color: lightgray;
   }
   100% {
     background-color: ${backgroundColor || 'black'}
-  }`
-
-const wiggle = (translateY: string) => keyframes`
+  }`;
+const wiggle = (translateY) => keyframes `
   0%, 7% {
     transform: rotate(0) translateY(${translateY}) ;
   }
@@ -50,16 +44,14 @@ const wiggle = (translateY: string) => keyframes`
   }
   40%, 100% {
     transform: rotate(0) translateY(${translateY}) ;
-  }`
-
-const animation = (props: InnerTooltipType & {translateY: string}) => css`
+  }`;
+const animation = (props) => css `
   ${props.animation.type === Transition_Options.ZOOM ?
     zoom(props.translateY) : props.animation.type === Transition_Options.FADE ?
-        fade : props.animation.type === Transition_Options.GRADIENT ?
-            gradient(props.style.backgroundColor) : wiggle(props.translateY)} ${props.animation.durationInSec}s alternate
-`
-
-export const StyledTooltip = styled.span<InnerTooltipType & {translateY: string}>`
+    fade : props.animation.type === Transition_Options.GRADIENT ?
+    gradient(props.style.backgroundColor) : wiggle(props.translateY)} ${props.animation.durationInSec}s alternate
+`;
+export const StyledTooltip = styled.span `
   position: absolute;
   left: 50%;
   line-height: 1;
@@ -98,4 +90,4 @@ export const StyledTooltip = styled.span<InnerTooltipType & {translateY: string}
     top: 50%;
     transform: translateY(${props => props.translateY});
   }
-`
+`;
