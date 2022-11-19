@@ -7,7 +7,7 @@ import {InnerTooltipType} from "../types";
 
 export const InnerTooltip = (props: InnerTooltipType) => {
     const newProps: InnerTooltipType = {...props, ...getTooltipStyle(props)}
-    const translateY = getTranslateY(props.location)
+    const translateY = getTranslateY(newProps.location)
 
     return <span>
         {newProps.children}
