@@ -10,10 +10,10 @@ export const InnerTooltip = (props: InnerTooltipType) => {
     const translateY = getTranslateY(props.location)
 
     return <span>
-        {props.children}
-        {props.showTooltip === ToolTip_Display.SHOW && checkEllipsisOverflow(props) &&
+        {newProps.children}
+        {newProps.showTooltip === ToolTip_Display.SHOW && checkEllipsisOverflow(props) &&
             <StyledTooltip data-testid="styledInnerTooltip" translateY={translateY}
-                           className={`tooltip ${props.location}`} {...newProps}>{props.content}</StyledTooltip>}
+                           className={`tooltip ${newProps.location}`} {...newProps}>{props.content}</StyledTooltip>}
     </span>
 }
 
